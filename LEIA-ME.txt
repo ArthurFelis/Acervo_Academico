@@ -1,0 +1,26 @@
+ACERVO ACADÊMICO - COMO PUBLICAR NA INFINITYFREE
+=================================================
+
+1) Crie a conta e um site em https://www.infinityfree.com (anote o domínio gerado).
+
+2) No painel (Client Area > Control Panel > MySQL Databases):
+   - Crie um banco (ex: acervo).
+   - Anote: MySQL Hostname (sqlXXX.infinityfree.com), DB Name (if0_..._acervo),
+     User Name (if0_...) e a senha do painel.
+
+3) Abra o phpMyAdmin (botão ao lado do banco), selecione o banco,
+   aba "Importar", escolha o arquivo database.sql e execute.
+
+4) Edite includes/config.php e preencha DB_HOST, DB_NAME, DB_USER e DB_PASS.
+
+5) Envie TODOS os arquivos para a pasta htdocs do site
+   (File Manager do painel ou FileZilla/FTP), mantendo as pastas:
+   css/, js/, includes/, uploads/ (com o .htaccess dentro).
+
+6) Acesse http://SEU-DOMINIO/register.php, crie uma conta, faça login e teste:
+   cadastro, login, novo artigo (PDF), busca e download.
+
+Observações
+- Limite de PDF: 10 MB (a InfinityFree pode limitar o upload; se falhar, use um PDF menor).
+- Senhas são salvas com password_hash; consultas usam PDO com prepared statements.
+- Os downloads passam por download.php (só usuários logados); a pasta uploads/ é bloqueada.

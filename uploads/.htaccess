@@ -1,0 +1,5 @@
+# Impede acesso direto e execução de scripts; downloads passam por download.php
+Options -Indexes
+<FilesMatch ".*">
+    Require all denied
+</FilesMatch>
